@@ -527,7 +527,7 @@ export default function Home() {
           <h2 className='font-bold text-xl'>INVISTA NO SEU FUTURO SEM<br /> PENSAR NO BOLSO! </h2>
           <p>Parcelamos sua certificação para facilitar sua jornada. Inscreva-se agora e conquiste seu próximo nível! 🚀</p>
         </section>
-        <section className="flex gap-2 btn">
+        <section className="flex md:flex-row flex-col gap-2 btn">
           <Button className="text-sm md:text-base" href='#certificacoes' variant="inactive">Ver Cursos</Button>
           <Button className="text-sm md:text-base" href='https://wa.me/244938447195' variant="default" showArrow>Inscreva-se Agora</Button>
         </section>
