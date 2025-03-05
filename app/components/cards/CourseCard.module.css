@@ -1,0 +1,17 @@
+.card {
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
+    width: 250px;
+}
+
+.card:hover {
+    background-color: #8505db66;
+}
+
+.content{
+  min-height: 6rem;
+}
+
+.content{
+  font-size: small;
+}

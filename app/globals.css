@@ -1,21 +1,321 @@
+@font-face {
+  font-family: 'Istok Web';
+  src: url('/font/IstokWeb-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Istok Web';
+  src: url('/font/IstokWeb-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #8405DB;
+  /* --background: #ffffff;
+  --foreground: #171717; */
+  --background: #121212;
+  --foreground: #ededed;
+  --font-family: 'Istok Web', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #121212;
     --foreground: #ededed;
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  background-color: var(--background);
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family);
+  font-size: 15px;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+main.scrolled header {
+  background-color: #14141434;
+}
+
+/* .logo{
+  width: 80rem;
+} */
+
+.link.active{
+  color: #0080D0;
+}
+
+.link:hover {
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  color: var(--foreground);
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bg-canvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(132, 5, 219, 0.8), transparent);
+  filter: blur(400px);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.card-more{
+  background-color: var(--background);
+  color: var (--foreground);
+  width: 6.5rem;
+  height: 8.5rem;
+  border-radius: 16px;
+  border: solid 1px #8505db8f;
+  position: relative;
+  top: 2rem;
+}
+
+.card-more p{
+  text-align: center;
+  font-size: 12px;
+}
+
+.card-more .icon{
+  background-color: #8505db8f;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.card-more.principal{
+  background-color: #8505db8f;
+}
+
+.card-more.principal .icon{
+  background-color: #1212128c;
+}
+
+.card-more:hover{
+  background-color: var(--primary);
+  color: var (--foreground);
+  transition: all 0.3s ease;
+}
+
+.card-more:hover .icon{
+  background-color: var(--background);
+  transition: all 0.3s ease;
+}
+
+.menu-mobile {
+  position: relative;
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #8405DB;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(10, 10, 10, 0.9);
+  border-radius: 8px;
+  width: 13rem;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.menu.open {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container-section{
+  padding-top: 4rem;
+}
+
+.card-certification {
+  background-color: #8505db33;
+  color: var(--foreground);
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.card-certification h3,
+.card-certification label{
+  color: var(--primary);
+}
+
+.arrow {
+  margin-left: 0.5rem;
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
+}
+
+.card-certification:hover {
+  background-color: #8505db66;
+}
+
+.card-certification:hover .arrow {
+  transform: rotate(0deg);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.partners-carousel {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.partners-carousel .logos {
+  display: inline-block;
+  animation: scroll 20s linear infinite;
+}
+
+.partners-carousel .logo {
+  display: inline-block;
+  margin: 0 40px;
+}
+
+.courseCards-section {
+  overflow-x: auto;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+}
+
+.courseCards-section::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.courseCards-section {
+  cursor: grab;
+}
+
+.courseCards-section:active {
+  cursor: grabbing;
+}
+
+.courseCards-section {
+  -webkit-overflow-scrolling: touch;
+}
+
+.courseCards-section {
+  scroll-behavior: smooth;
+}
+
+.courseCards-section {
+  -webkit-user-select: none; /* Safari 3+, Safari on iOS 3+ */
+  user-select: none; /* Prevent text selection while dragging */
+}
+
+.courseCards-section {
+  touch-action: pan-x;
+}
+
+footer{
+  background-color: #141414;
+}
+
+@keyframes scaleup {
+  0% {
+      opacity: 0;
+      transform: scale(0);
+  }
+
+  60% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+@media (min-width: 768px) {
+  .scaleup {
+    animation: scaleup 1ms ease-in-out;
+    animation-timeline: view();
+    animation-range: cover 0% cover 30%;
+  }
+}
+
+
+.service-card{
+  background-color: #8505db66;
+  color: var(--foreground);
+  /* border-radius: 16px; */
+  transition: all 0.3s ease;
+}
+
+.service-img{
+  background-size: cover;
+  background-position: center;
+}
+
+
+.service-img.soc{
+  background-image: linear-gradient(to top, #8505db66, transparent), url('/img/servicos/4.jpg');
+}
+
+.service-img.fma{
+  background-image: linear-gradient(to top, #8505db66, transparent), url('/img/servicos/1.jpeg');
+}
+
+.service-img.ee{
+  background-image: linear-gradient(to top, #8505db66, transparent), url('/img/servicos/2.jpeg');
+}
+
+.service-img.dpp{
+  background-image: linear-gradient(to top, #8505db66, transparent), url('/img/servicos/3.webp');
 }

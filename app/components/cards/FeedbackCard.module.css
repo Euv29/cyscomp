@@ -1,0 +1,13 @@
+.FeedbackCard {
+    background-color: hsla(276, 96%, 44%, 0.1);
+    transition: background 0.3s ease;
+    width: 350px;
+}
+
+.FeedbackCard:hover {
+    background-color: hsla(276, 96%, 44%, 0.1);
+}
+
+.name{
+    color: var(--primary);
+}

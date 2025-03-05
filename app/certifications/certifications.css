@@ -1,0 +1,27 @@
+.certification-image{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: linear-gradient(to top, #8400db66, #4c027e66), url('/img/certification/bg.jpg');
+    filter: brightness(0.8);
+
+}
+
+/* .certification-image.ceh{
+    background-image: url('/img/certification/ceh.jpg');
+    filter: brightness(0.8);
+}
+
+.certification-image.ecsa{
+    background-image: url('/img/certification/ecsa.png');
+    filter: brightness(0.8);
+}
+
+.certification-image.cma{
+    background-image: url('/img/certification/cma.png');
+    filter: brightness(0.8);
+} */
+
+ul li{
+    text-decoration: none;
+}
