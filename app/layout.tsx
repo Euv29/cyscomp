@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   keywords: [
     "Cibersegurança", "Gestão de Incidentes", "Segurança Digital", "Proteção de Infraestruturas", "Resiliência Digital", "CYSCOMP", "Pentest", "Cybersecurity", "security", "EC-COUNCIL"
   ],
+  other: {
+    "google-site-verification": "W8d1QPFlYer-FcWobEL7Q-dFlMstbFrEdjGF9Q2Oiss"
+  }
 };
 
 export default function RootLayout({
