@@ -148,7 +148,7 @@ export default function Home() {
                   </a>
                 </section>
               </section>
-              <section className="hero-img">
+              <section className="w-full md:w-auto hero-img">
                 <Image id="herImg" className="hero-img" src="/img/img2.webp" alt="Description of image" width={400} height={600} priority />
               </section>
             </section>
