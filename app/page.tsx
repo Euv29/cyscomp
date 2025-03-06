@@ -28,6 +28,7 @@ export default function Home() {
     };
   }, []);
 
+  // Detecta cliques fora do menu para fechá-lo automaticamente
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
@@ -54,13 +55,25 @@ export default function Home() {
     }
   }, [loading]);
 
+  // Função para abrir um popup específico pelo seu ID
   const handleOpenPopup = (id: string) => {
     setOpenPopupId(id);
   };
 
+  // Função para fechar qualquer popup aberto
   const handleClosePopup = () => {
     setOpenPopupId(null);
   };
+
+  // Function to handle smooth scrolling without showing fragment in URL
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
 
   return (
     <>
@@ -74,12 +87,12 @@ export default function Home() {
             <section className="hidden md:flex justify-between deskto-menu w-3/4">
               <nav>
                 <ul className="flex justify-between items-center gap-4">
-                  <li><a className="link" href="#home">Home</a></li>
-                  <li><a className="link" href="#sobre">Sobre</a></li>
-                  <li><a className="link" href="#servicos">Serviços</a></li>
-                  <li><a className="link" href="#certificacoes">Certificações EC-Council</a></li>
-                  <li><a className="link" href="#cursos">Cursos</a></li>
-                  <li><a className="link" href="#treinamentos">Treinamentos</a></li>
+                  <li><a className="link" href="#home" onClick={(e) => scrollToSection(e, 'home')}>Home</a></li>
+                  <li><a className="link" href="#sobre" onClick={(e) => scrollToSection(e, 'sobre')}>Sobre</a></li>
+                  <li><a className="link" href="#servicos" onClick={(e) => scrollToSection(e, 'servicos')}>Serviços</a></li>
+                  <li><a className="link" href="#certificacoes" onClick={(e) => scrollToSection(e, 'certificacoes')}>Certificações EC-Council</a></li>
+                  <li><a className="link" href="#cursos" onClick={(e) => scrollToSection(e, 'cursos')}>Cursos</a></li>
+                  <li><a className="link" href="#treinamentos" onClick={(e) => scrollToSection(e, 'treinamentos')}>Treinamentos</a></li>
                 </ul>
               </nav>
               <section className="flex gap-4 btn">
@@ -101,12 +114,12 @@ export default function Home() {
               </label>
               <nav className={`menu ${menuOpen ? 'open' : ''}`}>
                 <ul className="flex flex-col gap-4">
-                  <li><a className="link" href="#home">Home</a></li>
-                  <li><a className="link" href="#sobre">Sobre</a></li>
-                  <li><a className="link" href="#servicos">Serviços</a></li>
-                  <li><a className="link" href="#certificacoes">Certificações EC-Council</a></li>
-                  <li><a className="link" href="#cursos">Cursos</a></li>
-                  <li><a className="link" href="#treinamentos">Treinamentos</a></li>
+                  <li><a className="link" href="#home" onClick={(e) => scrollToSection(e, 'home')}>Home</a></li>
+                  <li><a className="link" href="#sobre" onClick={(e) => scrollToSection(e, 'sobre')}>Sobre</a></li>
+                  <li><a className="link" href="#servicos" onClick={(e) => scrollToSection(e, 'servicos')}>Serviços</a></li>
+                  <li><a className="link" href="#certificacoes" onClick={(e) => scrollToSection(e, 'certificacoes')}>Certificações EC-Council</a></li>
+                  <li><a className="link" href="#cursos" onClick={(e) => scrollToSection(e, 'cursos')}>Cursos</a></li>
+                  <li><a className="link" href="#treinamentos" onClick={(e) => scrollToSection(e, 'treinamentos')}>Treinamentos</a></li>
                 </ul>
                 <section className="flex flex-col gap-4">
                   <Button onClick={() => handleOpenPopup('popup2')} variant="inactive">Entrar</Button>
@@ -636,7 +649,7 @@ export default function Home() {
           <p>Parcelamos sua certificação para facilitar sua jornada. Inscreva-se agora e conquiste seu próximo nível! 🚀</p>
         </section>
         <section className="flex md:flex-row flex-col gap-2 btn">
-          <Button className="text-sm md:text-base" href='#certificacoes' variant="inactive">Ver Cursos</Button>
+          <Button className="text-sm md:text-base" href="" onClick={() => document.getElementById('certificacoes')?.scrollIntoView({ behavior: 'smooth' })} variant="inactive">Ver Cursos</Button>
           <Button className="text-sm md:text-base" href='https://wa.me/244938447195' variant="default" showArrow>Inscreva-se Agora</Button>
         </section>
       </Popup>
