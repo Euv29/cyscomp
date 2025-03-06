@@ -132,7 +132,7 @@ export default function CertificationsLayout({
                                     <h2 className='font-bold text-xl'>Nossos Parceiros</h2>
                                     <p className='md:w-2/3 text-center'>Trabalhamos lado a lado com empresas e instituições renomadas para oferecer formações de alto nível e soluções de cibersegurança inovadoras. </p>
                                 </section> */}
-                                <section className="max-w-screen md:max-w-screen-xl overflow-hidden scaleup partners-carousel">
+                                <section className="max-w-screen md:max-w-screen-xl overflow-hidden partners-carousel">
                                     <div className="logos">
                                         <Image src="/img/partners/logo1.png" alt="Logo 1" width={80} height={30} className="logo" />
                                         <Image src="/img/partners/logo2.png" alt="Logo 2" width={80} height={30} className="logo" />

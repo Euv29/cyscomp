@@ -100,7 +100,7 @@ canvas {
 
 @keyframes pulse {
   0%, 100% {
-    opacity: 0.8;
+    opacity: 0.6;
   }
   50% {
     opacity: 1;
@@ -222,6 +222,9 @@ canvas {
   overflow: hidden;
   white-space: nowrap;
   position: relative;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  
 }
 
 .partners-carousel .logos {
@@ -238,6 +241,12 @@ canvas {
   overflow-x: auto;
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+}
+
+.courseCards-section {
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
 
 .courseCards-section::-webkit-scrollbar {
