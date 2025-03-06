@@ -47,10 +47,15 @@ body {
 header {
   background-color: transparent;
   transition: background-color 0.3s ease;
+  background-color: rgba(20, 20, 20, 0.14);
+
+  z-index: 9999;
+  position: sticky;
+  top: 0;
 }
 
-main.scrolled header {
-  background-color: #14141434;
+header.scrolled {
+  background-color: rgba(20, 20, 20, 0.14);
 }
 
 /* .logo{
@@ -194,11 +199,13 @@ canvas {
   transition: transform 0.3s ease;
 }
 
-.card-certification:hover {
+.card-certification:hover,
+.service-card:hover {
   background-color: #8505db66;
 }
 
-.card-certification:hover .arrow {
+.card-certification:hover .arrow,
+.service-card:hover .arrow {
   transform: rotate(0deg);
 }
 
@@ -290,9 +297,8 @@ footer{
   }
 }
 
-
 .service-card{
-  background-color: #8505db66;
+  background-color: #8505db33;
   color: var(--foreground);
   /* border-radius: 16px; */
   transition: all 0.3s ease;

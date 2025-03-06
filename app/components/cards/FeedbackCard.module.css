@@ -1,5 +1,5 @@
 .FeedbackCard {
-    background-color: hsla(276, 96%, 44%, 0.1);
+    background-color: #8505db33;
     transition: background 0.3s ease;
     width: 350px;
 }

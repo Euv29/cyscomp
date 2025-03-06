@@ -15,7 +15,7 @@ const ECSAPage: React.FC = () => {
                     </section>
                     <section className="flex items-center gap-1 px-4 py-2 rounded-xl w-full card-certification">
                         <section className="icon-certification">
-                            <Image src="/img/icon/search-sharp.svg" alt="ECSA Certification" width={40} height={50} />
+                            <Image src="/img/icon/search-sharp.svg" alt="ECSA Certification" width={40} height={40} />
                         </section>
                         <section className="flex flex-col justify-between w-full description-certification">
                             <section className='flex flex-col gap-1'>
@@ -79,7 +79,7 @@ const ECSAPage: React.FC = () => {
                         {/* C3 */}
                         <a href='../certifications/CMA' className="flex gap-2 p-2 rounded-xl w-full md:w-96 min-h-40 card-certification">
                             <section className="icon-certification">
-                                <Image src="/img/icon/bug-sharp.svg" alt="CMA Certification" width={40} height={40} />
+                                <Image src="/img/icon/bug-sharp.svg" alt="CMA Certification" width={25} height={25} />
                             </section>
                             <section className="flex flex-col justify-between w-4/5 description-certification">
                                 <section className='flex flex-col gap-1'>
@@ -93,7 +93,7 @@ const ECSAPage: React.FC = () => {
                         {/* C4 */}
                         <a href='../certifications/ECIH' className="flex gap-2 p-2 rounded-xl w-full md:w-96 min-h-40 card-certification">
                             <section className="icon-certification">
-                                <Image src="/img/icon/bug-sharp.svg" alt="ECIH Certification" width={40} height={40} />
+                                <Image src="/img/icon/bug-sharp.svg" alt="ECIH Certification" width={25} height={25} />
                             </section>
                             <section className="flex flex-col justify-between w-4/5 description-certification">
                                 <section className='flex flex-col gap-1'>
@@ -107,7 +107,7 @@ const ECSAPage: React.FC = () => {
                         {/* C5 */}
                         <a href='../certifications/CND' className="flex gap-2 p-2 rounded-xl w-full md:w-96 min-h-40 card-certification">
                             <section className="icon-certification">
-                                <Image src="/img/icon/shield-half-sharp.svg" alt="CND Certification" width={40} height={50} />
+                                <Image src="/img/icon/shield-half-sharp.svg" alt="CND Certification" width={25} height={25} />
                             </section>
                             <section className="flex flex-col justify-between w-4/5 description-certification">
                                 <section className='flex flex-col gap-1'>
@@ -121,7 +121,7 @@ const ECSAPage: React.FC = () => {
                         {/* C6 */}
                         <a href='../certifications/CHFI' className="flex gap-2 p-2 rounded-xl w-full md:w-96 min-h-40 card-certification">
                             <section className="icon-certification">
-                                <Image src="/img/icon/laptop.svg" alt="CEH Certification" width={40} height={40} />
+                                <Image src="/img/icon/laptop.svg" alt="CEH Certification" width={25} height={25} />
                             </section>
                             <section className="flex flex-col justify-between w-4/5 description-certification">
                                 <section className='flex flex-col gap-1'>
@@ -135,7 +135,7 @@ const ECSAPage: React.FC = () => {
                         {/* C1 */}
                         <a href='../certifications/CEH' className="flex gap-2 p-2 rounded-xl w-full md:w-96 min-h-40 card-certification">
                             <section className="icon-certification">
-                                <Image src="/img/icon/shield-half-sharp.svg" alt="CEH Certification" width={40} height={50} />
+                                <Image src="/img/icon/shield-half-sharp.svg" alt="CEH Certification" width={25} height={25} />
                             </section>
                             <section className="flex flex-col justify-between w-4/5 description-certification">
                                 <section className='flex flex-col gap-1'>
@@ -148,7 +148,7 @@ const ECSAPage: React.FC = () => {
                         {/* C2 */}
                         <a href='#' className="flex gap-2 p-2 rounded-xl w-full md:w-96 min-h-40 card-certification">
                             <section className="icon-certification">
-                                <Image src="/img/icon/search-sharp.svg" alt="CEH Certification" width={40} height={40} />
+                                <Image src="/img/icon/search-sharp.svg" alt="CEH Certification" width={25} height={25} />
                             </section>
                             <section className="flex flex-col justify-between w-4/5 description-certification">
                                 <section className='flex flex-col gap-1'>

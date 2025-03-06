@@ -174,7 +174,7 @@ export default function Home() {
               </section>
               <section className='flex md:flex-row flex-col justify-center items-center gap-4 py-7 w-full md'>
                 {/* Service 1 */}
-                <section className="md:w-1/4 md:min-h-[29rem] service-card scaleup">
+                <section className="rounded-xl md:w-1/4 md:min-h-[29rem] service-card scaleup">
                   <section className="w-full min-h-36 md:min-h-52 service-img soc">
                   </section>
                   <section className="flex flex-col justify-between items-center gap-2 p-4 w-full h-full description-service">
@@ -184,7 +184,7 @@ export default function Home() {
                   </section>
                 </section>
                 {/* Service 2 */}
-                <section className="md:w-1/4 md:min-h-[29rem] service-card scaleup">
+                <section className="rounded-xl md:w-1/4 md:min-h-[29rem] service-card scaleup">
                   <section className="w-full min-h-36 md:min-h-52 service-img fma">
                   </section>
                   <section className="flex flex-col justify-between items-center gap-2 p-4 w-full h-full description-service">
@@ -194,7 +194,7 @@ export default function Home() {
                   </section>
                 </section>
                 {/* Service 3 */}
-                <section className="md:w-1/4 md:min-h-[29rem] service-card scaleup">
+                <section className="rounded-xl md:w-1/4 md:min-h-[29rem] service-card scaleup">
                   <section className="w-full min-h-36 md:min-h-52 service-img ee">
                   </section>
                   <section className="flex flex-col justify-between items-center gap-2 md:gap-7 p-4 w-full h-full description-service">
@@ -204,7 +204,7 @@ export default function Home() {
                   </section>
                 </section>
                 {/* Service 4 */}
-                <section className="md:w-1/4 md:min-h-[29rem] service-card scaleup">
+                <section className="rounded-xl md:w-1/4 md:min-h-[29rem] service-card scaleup">
                   <section className="w-full min-h-36 md:min-h-52 service-img dpp">
                   </section>
                   <section className="flex flex-col justify-between items-center gap-2 p-4 w-full h-full description-service">
@@ -322,7 +322,61 @@ export default function Home() {
               <section className="flex flex-col items-start gap-2 w-full scaleup">
                 <h2 className='font-bold text-2xl'>Cursos Técnicos <br /> & Práticos</h2>
               </section>
-              <section className="flex items-start gap-4 px-4 md:px-12 w-screen md:max-w-screen-xl scaleup courseCards-section">
+              <section
+                className="flex items-start gap-4 px-4 md:px-12 w-screen max-w-screen-xl overflow-x-auto scaleup courseCards-section"
+                ref={(el) => {
+                  if (!el) return;
+
+                  let isDown = false;
+                  let startX: number;
+                  let scrollLeft: number;
+
+                  // Mouse events
+                  el.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    el.classList.add('active');
+                    startX = e.pageX - el.offsetLeft;
+                    scrollLeft = el.scrollLeft;
+                  });
+
+                  el.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    el.classList.remove('active');
+                  });
+
+                  el.addEventListener('mouseup', () => {
+                    isDown = false;
+                    el.classList.remove('active');
+                  });
+
+                  el.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - el.offsetLeft;
+                    const walk = (x - startX) * 1.5; // Scroll speed multiplier
+                    el.scrollLeft = scrollLeft - walk;
+                  });
+
+                  // Touch events
+                  el.addEventListener('touchstart', (e) => {
+                    isDown = true;
+                    startX = e.touches[0].pageX - el.offsetLeft;
+                    scrollLeft = el.scrollLeft;
+                  });
+
+                  el.addEventListener('touchend', () => {
+                    isDown = false;
+                  });
+
+                  el.addEventListener('touchmove', (e) => {
+                    if (!isDown) return;
+                    const x = e.touches[0].pageX - el.offsetLeft;
+                    const walk = (x - startX) * 1.5;
+                    el.scrollLeft = scrollLeft - walk;
+                  });
+                }}
+                style={{ cursor: 'grab', scrollBehavior: 'smooth', WebkitOverflowScrolling: 'touch' }}
+              >
                 <CourseCard
                   title="Fundamentos de Cibersegurança"
                   description="Inicie sua jornada no mundo da segurança digital com nosso curso de Fundamentos de Cibersegurança."
@@ -372,7 +426,61 @@ export default function Home() {
               <section className="flex flex-col items-start gap-2 w-full scaleup">
                 <h2 className='font-bold text-2xl'>Formações  <br /> Complementares</h2>
               </section>
-              <section className="flex items-start gap-4 px-4 md:px-12 w-screen md:max-w-screen-xl scaleup courseCards-section">
+              <section
+                className="flex items-start gap-4 px-4 md:px-12 w-screen max-w-screen-xl overflow-x-auto scaleup courseCards-section"
+                ref={(el) => {
+                  if (!el) return;
+
+                  let isDown = false;
+                  let startX: number;
+                  let scrollLeft: number;
+
+                  // Mouse events
+                  el.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    el.classList.add('active');
+                    startX = e.pageX - el.offsetLeft;
+                    scrollLeft = el.scrollLeft;
+                  });
+
+                  el.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    el.classList.remove('active');
+                  });
+
+                  el.addEventListener('mouseup', () => {
+                    isDown = false;
+                    el.classList.remove('active');
+                  });
+
+                  el.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - el.offsetLeft;
+                    const walk = (x - startX) * 1.5; // Scroll speed multiplier
+                    el.scrollLeft = scrollLeft - walk;
+                  });
+
+                  // Touch events
+                  el.addEventListener('touchstart', (e) => {
+                    isDown = true;
+                    startX = e.touches[0].pageX - el.offsetLeft;
+                    scrollLeft = el.scrollLeft;
+                  });
+
+                  el.addEventListener('touchend', () => {
+                    isDown = false;
+                  });
+
+                  el.addEventListener('touchmove', (e) => {
+                    if (!isDown) return;
+                    const x = e.touches[0].pageX - el.offsetLeft;
+                    const walk = (x - startX) * 1.5;
+                    el.scrollLeft = scrollLeft - walk;
+                  });
+                }}
+                style={{ cursor: 'grab', scrollBehavior: 'smooth', WebkitOverflowScrolling: 'touch' }}
+              >
                 <CourseCard
                   title="Gestão de Projectos"
                   description="Certificação em metodologias ágeis como Scrum e PMP."
