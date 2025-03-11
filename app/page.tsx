@@ -610,8 +610,7 @@ export default function Home() {
               <div className='flex flex-col justify-center items-center gap-4 md:gap-1 contacts'>
                 <p>Urbanização Nova vida Rua 60 casa nº 1597</p>
                 <section className='flex justify-center items-center gap-1'>
-                  <a className='link' href="mailo:info@cyscomp.co.ao ">info@cyscomp.co.ao </a>|
-                  <a className='link' href="mailto:pfaria@cyscomp.co.ao">pfaria@cyscomp.co.ao</a>
+                  <a className='link' href="mailo:info@cyscomp.co.ao ">info@cyscomp.co.ao </a>
                 </section>
                 <section className='flex justify-center items-center gap-1'>
                   <a className='link' href="calto:+244938447195">+244 938 447 195 </a>|
@@ -637,7 +636,7 @@ export default function Home() {
               </div>
             </section>
             <section className='p-2 text-center'>
-              ©cyscomp 2025, Todos os direito reservados | Designed By <a className='link active' href="https://www.venancio-wapinda.me">Venâncio Wapinda</a>
+              ©cyscomp 2025, Todos os direito reservados
             </section>
           </footer>
         </div>
